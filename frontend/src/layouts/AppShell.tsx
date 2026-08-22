@@ -27,7 +27,7 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
 const drawerNavLinkClass = ({ isActive }: { isActive: boolean }) =>
   `flex h-12 items-center rounded-md px-3 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 ${
     isActive
-      ? 'bg-[var(--accent-soft)] text-[var(--accent)]'
+      ? 'bg-[var(--accent-soft)] text-[var(--accent-text)]'
       : 'text-[var(--ink)] hover:bg-[var(--bg)]'
   }`;
 
@@ -93,7 +93,7 @@ export function AppShell() {
                 aria-expanded={menuOpen}
                 className="flex items-center gap-1.5 rounded-md px-2 py-1.5 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--nav)]"
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--accent-soft)] text-sm font-semibold text-[var(--accent)]">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--accent-soft)] text-sm font-semibold text-[var(--accent-text)]">
                   {(user?.firstName?.[0] || user?.email?.[0] || '?').toUpperCase()}
                 </span>
                 <span className="hidden text-sm sm:inline">{user?.firstName || user?.loginId}</span>
@@ -102,7 +102,7 @@ export function AppShell() {
               {menuOpen && (
                 <div
                   role="menu"
-                  className="absolute right-0 z-40 mt-1.5 w-48 overflow-hidden rounded-lg border border-[var(--line)] bg-white py-1 shadow-lg"
+                  className="absolute right-0 z-40 mt-1.5 w-48 overflow-hidden rounded-lg border border-[var(--line)] bg-[var(--surface)] py-1 shadow-lg"
                 >
                   <button
                     type="button"
@@ -142,7 +142,7 @@ export function AppShell() {
         ariaLabel="Navigation menu"
       >
         <div className="mb-4 flex items-center gap-2 border-b border-[var(--line)] pb-4">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--accent-soft)] text-sm font-semibold text-[var(--accent)]">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--accent-soft)] text-sm font-semibold text-[var(--accent-text)]">
             {(user?.firstName?.[0] || user?.email?.[0] || '?').toUpperCase()}
           </span>
           <div className="min-w-0">

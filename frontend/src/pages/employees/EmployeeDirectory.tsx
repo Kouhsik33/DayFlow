@@ -126,7 +126,7 @@ export function EmployeeDirectory() {
           />
           <input
             placeholder="Search name, code, department…"
-            className="w-full rounded-md border border-[var(--border-control)] bg-white py-2 pl-9 pr-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+            className="w-full rounded-md border border-[var(--border-control)] bg-[var(--surface)] py-2 pl-9 pr-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
           />
@@ -147,7 +147,7 @@ export function EmployeeDirectory() {
           <Link
             key={emp.id}
             to={`/employees/${emp.id}`}
-            className="group relative rounded-lg border border-[var(--line)] bg-white p-4 shadow-[var(--shadow)] transition hover:border-[var(--accent)]"
+            className="group relative rounded-lg border border-[var(--line)] bg-[var(--surface)] p-4 shadow-[var(--shadow)] transition hover:border-[var(--accent)]"
           >
             <span className="absolute right-3 top-3">
               <PresenceIndicator
@@ -155,7 +155,7 @@ export function EmployeeDirectory() {
               />
             </span>
             <div className="flex items-center gap-3">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[var(--accent-soft)] text-sm font-semibold text-[var(--accent)]">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[var(--accent-soft)] text-sm font-semibold text-[var(--accent-text)]">
                 {emp.profilePictureUrl ? (
                   <img
                     src={String(emp.profilePictureUrl)}
@@ -170,7 +170,7 @@ export function EmployeeDirectory() {
                 )}
               </div>
               <div>
-                <p className="font-semibold group-hover:text-[var(--accent)]">
+                <p className="font-semibold group-hover:text-[var(--accent-text)]">
                   {emp.firstName} {emp.lastName}
                 </p>
                 <p className="text-sm text-[var(--muted)]">
@@ -325,7 +325,7 @@ function CardGridSkeleton() {
   return (
     <div aria-busy="true" aria-label="Loading employees" className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {Array.from({ length: 6 }).map((_, i) => (
-        <div key={i} className="rounded-lg border border-[var(--line)] bg-white p-4">
+        <div key={i} className="rounded-lg border border-[var(--line)] bg-[var(--surface)] p-4">
           <div className="flex items-center gap-3">
             <div className="h-12 w-12 shrink-0 animate-pulse rounded-full bg-[var(--line)]/60" />
             <div className="min-w-0 flex-1 space-y-2">

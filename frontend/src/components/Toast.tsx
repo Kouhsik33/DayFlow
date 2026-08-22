@@ -48,7 +48,7 @@ const VARIANT_STYLES: Record<ToastVariant, { icon: typeof CheckCircleIcon; class
   },
   info: {
     icon: InfoIcon,
-    classes: 'border-[var(--accent)]/25 bg-[var(--accent-soft)] text-[var(--accent)]',
+    classes: 'border-[var(--accent)]/25 bg-[var(--accent-soft)] text-[var(--accent-text)]',
   },
 };
 

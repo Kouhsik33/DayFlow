@@ -44,7 +44,7 @@ export function LoginPage() {
   }
 
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-white p-8 shadow-[var(--shadow)]">
+    <div className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-8 shadow-[var(--shadow)]">
       <div className="mb-6 text-center">
         <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-[var(--accent)] text-lg font-bold text-white">
           Df
@@ -76,7 +76,7 @@ export function LoginPage() {
             <button
               type="button"
               onClick={() => setShowForgot((v) => !v)}
-              className="rounded text-xs font-medium text-[var(--accent)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+              className="rounded text-xs font-medium text-[var(--accent-text)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
             >
               Forgot password?
             </button>
@@ -111,7 +111,7 @@ export function LoginPage() {
           Setting up a new organisation?{' '}
           <Link
             to="/signup"
-            className="rounded font-medium text-[var(--accent)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+            className="rounded font-medium text-[var(--accent-text)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
           >
             Create your company
           </Link>

@@ -188,7 +188,7 @@ export function EmployeeProfile({ self }: { self?: boolean }) {
   return (
     <div>
       {/* Profile header — identity first, then the facts people look up most often. */}
-      <section className="mb-5 overflow-hidden rounded-lg border border-[var(--line)] bg-white shadow-[var(--shadow)]">
+      <section className="mb-5 overflow-hidden rounded-lg border border-[var(--line)] bg-[var(--surface)] shadow-[var(--shadow)]">
         <div className="h-16 bg-[var(--nav)] sm:h-20" aria-hidden="true" />
         <div className="px-5 pb-5">
           <div className="-mt-10 flex flex-col gap-4 sm:-mt-12 sm:flex-row sm:items-end sm:justify-between">
@@ -246,7 +246,7 @@ export function EmployeeProfile({ self }: { self?: boolean }) {
             onKeyDown={(e) => handleTabKeyDown(e, t.key)}
             className={`px-4 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 ${
               tab === t.key
-                ? 'border-b-2 border-[var(--accent)] text-[var(--accent)]'
+                ? 'border-b-2 border-[var(--accent)] text-[var(--accent-text)]'
                 : 'text-[var(--muted)] hover:text-[var(--ink)]'
             }`}
           >
@@ -259,7 +259,7 @@ export function EmployeeProfile({ self }: { self?: boolean }) {
         role="tabpanel"
         id={`profile-panel-${tab}`}
         aria-labelledby={`profile-tab-${tab}`}
-        className="rounded-lg border border-[var(--line)] bg-white p-5 shadow-[var(--shadow)]"
+        className="rounded-lg border border-[var(--line)] bg-[var(--surface)] p-5 shadow-[var(--shadow)]"
       >
         {tab === 'info' && (
           <dl className="grid gap-4 sm:grid-cols-2">
@@ -323,7 +323,7 @@ export function EmployeeProfile({ self }: { self?: boolean }) {
                         href={d.fileUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[var(--accent)] hover:underline"
+                        className="text-[var(--accent-text)] hover:underline"
                       >
                         Download
                       </a>
@@ -529,7 +529,7 @@ export function EmployeeProfile({ self }: { self?: boolean }) {
                 {((emp.skills as string[]) || []).map((s) => (
                   <span
                     key={s}
-                    className="rounded bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-[var(--accent)]"
+                    className="rounded bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-[var(--accent-text)]"
                   >
                     {s}
                   </span>
@@ -549,7 +549,7 @@ export function EmployeeProfile({ self }: { self?: boolean }) {
               <div className="sm:col-span-2">
                 <Link
                   to="/change-password"
-                  className="text-sm font-medium text-[var(--accent)] hover:underline"
+                  className="text-sm font-medium text-[var(--accent-text)] hover:underline"
                 >
                   Change password →
                 </Link>
@@ -629,7 +629,7 @@ function ProfileSkeleton() {
           <div key={i} className="h-4 w-16 animate-pulse rounded bg-[var(--line)]/60" />
         ))}
       </div>
-      <div className="rounded-lg border border-[var(--line)] bg-white p-5">
+      <div className="rounded-lg border border-[var(--line)] bg-[var(--surface)] p-5">
         <div className="grid gap-5 sm:grid-cols-2">
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="space-y-2">

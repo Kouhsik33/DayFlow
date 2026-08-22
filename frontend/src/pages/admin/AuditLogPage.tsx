@@ -30,7 +30,7 @@ export function AuditLogPage() {
           <label className="block text-sm">
             <span className="sr-only">Filter by entity type</span>
             <select
-              className="rounded-md border border-[var(--border-control)] bg-white px-3 py-2 text-base outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+              className="rounded-md border border-[var(--border-control)] bg-[var(--surface)] px-3 py-2 text-base outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
               value={entityType}
               onChange={(e) => setEntityType(e.target.value)}
             >
@@ -55,7 +55,7 @@ export function AuditLogPage() {
       )}
 
       {items.length > 0 && (
-        <div className="overflow-x-auto rounded-lg border border-[var(--line)] bg-white">
+        <div className="overflow-x-auto rounded-lg border border-[var(--line)] bg-[var(--surface)]">
           <table className="w-full text-left text-sm">
             <caption className="sr-only">Audit log entries</caption>
             <thead className="border-b border-[var(--line)] bg-[var(--bg)] text-[var(--muted)]">
@@ -99,7 +99,7 @@ export function AuditLogPage() {
                           aria-expanded={isOpen}
                           aria-controls={`audit-diff-${id}`}
                           onClick={() => setExpanded(isOpen ? null : id)}
-                          className="cursor-pointer rounded px-2 py-1 text-xs font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+                          className="cursor-pointer rounded px-2 py-1 text-xs font-medium text-[var(--accent-text)] hover:bg-[var(--accent-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
                         >
                           {isOpen ? 'Hide' : 'Diff'}
                         </button>
@@ -108,7 +108,7 @@ export function AuditLogPage() {
                     {isOpen && (
                       <tr className="bg-[var(--bg)]">
                         <td id={`audit-diff-${id}`} colSpan={5} className="px-3 py-3">
-                          <pre className="overflow-x-auto rounded bg-white p-3 text-xs">
+                          <pre className="overflow-x-auto rounded bg-[var(--surface)] p-3 text-xs">
                             {JSON.stringify({ previous: row.previousValue, next: row.newValue }, null, 2)}
                           </pre>
                         </td>
@@ -127,7 +127,7 @@ export function AuditLogPage() {
 
 function Skeleton() {
   return (
-    <div aria-busy="true" aria-label="Loading audit log" className="overflow-hidden rounded-lg border border-[var(--line)] bg-white">
+    <div aria-busy="true" aria-label="Loading audit log" className="overflow-hidden rounded-lg border border-[var(--line)] bg-[var(--surface)]">
       {Array.from({ length: 6 }).map((_, i) => (
         <div key={i} className="flex items-center gap-6 border-b border-[var(--line)] px-3 py-3.5 last:border-0">
           <div className="h-3 w-24 animate-pulse rounded bg-[var(--line)]/60" />

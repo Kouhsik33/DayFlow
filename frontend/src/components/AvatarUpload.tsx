@@ -80,7 +80,7 @@ export function AvatarUpload({
     <div className="flex flex-col items-center gap-2">
       <div className="relative" style={{ width: size, height: size }}>
         <div
-          className="flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-[var(--accent-soft)] text-xl font-semibold text-[var(--accent)] ring-2 ring-white"
+          className="flex h-full w-full items-center justify-center overflow-hidden rounded-full bg-[var(--accent-soft)] text-xl font-semibold text-[var(--accent-text)] ring-2 ring-[var(--surface)]"
           style={{ fontSize: Math.max(14, size / 4) }}
         >
           {shown ? (
@@ -106,7 +106,7 @@ export function AvatarUpload({
             type="button"
             onClick={() => inputRef.current?.click()}
             aria-label={shown ? 'Change profile picture' : 'Upload profile picture'}
-            className="absolute -bottom-0.5 -right-0.5 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-2 border-white bg-[var(--accent)] text-white shadow-md transition hover:bg-[var(--accent-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+            className="absolute -bottom-0.5 -right-0.5 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-2 border-[var(--surface)] bg-[var(--accent)] text-white shadow-md transition hover:bg-[var(--accent-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
           >
             <CameraGlyph />
           </button>

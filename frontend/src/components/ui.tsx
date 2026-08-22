@@ -13,7 +13,7 @@ export function EmptyState({
   action?: ReactNode;
 }) {
   return (
-    <div className="rounded-lg border border-dashed border-[var(--line)] bg-white px-6 py-12 text-center">
+    <div className="rounded-lg border border-dashed border-[var(--line)] bg-[var(--surface)] px-6 py-12 text-center">
       {icon && (
         <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--bg)] text-[var(--muted)]">
           {icon}
@@ -54,7 +54,7 @@ export function ErrorState({
         <button
           type="button"
           onClick={onRetry}
-          className="mt-3 inline-flex h-8 cursor-pointer items-center rounded-md px-3 text-sm font-medium text-[var(--accent)] underline underline-offset-2 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+          className="mt-3 inline-flex h-8 cursor-pointer items-center rounded-md px-3 text-sm font-medium text-[var(--accent-text)] underline underline-offset-2 hover:bg-[var(--surface)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
         >
           Retry
         </button>
@@ -93,7 +93,7 @@ export function StatStrip({
       {items.map((item) => (
         <div
           key={item.label}
-          className="rounded-lg border border-[var(--line)] bg-white px-4 py-3 shadow-[var(--shadow)]"
+          className="rounded-lg border border-[var(--line)] bg-[var(--surface)] px-4 py-3 shadow-[var(--shadow)]"
         >
           <p className="text-xs font-medium uppercase tracking-wide text-[var(--muted)]">
             {item.label}

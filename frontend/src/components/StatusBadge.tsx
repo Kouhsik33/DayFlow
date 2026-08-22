@@ -105,7 +105,7 @@ export function PresenceDot({ state, size = 10 }: { state: PresenceState; size?:
       {state === 'ON_LEAVE' ? (
         <AirplaneIcon size={size} className="text-[var(--info)]" aria-hidden="true" />
       ) : state === 'ABSENT' ? (
-        <span className="block h-full w-full rounded-full border-2 border-[var(--warning)] bg-white" />
+        <span className="block h-full w-full rounded-full border-2 border-[var(--warning)] bg-[var(--surface)]" />
       ) : (
         <span
           className={`block h-full w-full rounded-full ${
