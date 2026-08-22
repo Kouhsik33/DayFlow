@@ -84,8 +84,8 @@ with either the **email** or the **Login ID**.
 
 | Role | Email | Password | Notes |
 |---|---|---|---|
-| HR Admin (bootstrap) | `hr.admin@yourcompany.com` | `ChangeMeOnFirstLogin!` | Edit `BOOTSTRAP_HR_EMAIL`/`BOOTSTRAP_HR_PASSWORD` in `.env` before seeding to change this |
-| Demo employees | `firstname.lastname@dayflow-demo.local` | `Password@123` (`DEMO_SEED_PASSWORD` in `.env`) | ~30 employees across 8 departments |
+| HR Admin (bootstrap) | *(whatever you set `BOOTSTRAP_HR_EMAIL` to)* — `hr.admin@yourcompany.com` is only the **placeholder default in `.env.example`**, it is not a real login | *(whatever you set `BOOTSTRAP_HR_PASSWORD` to)* | Set both in `.env` **before** running `npm run prisma:seed` — bootstrap only ever creates one account, on an empty database |
+| Demo employees | `firstname.lastname@dayflow-demo.local` | `Password@123` (`DEMO_SEED_PASSWORD` in `.env`) | ~30 employees across 8 departments — these work regardless of what you set `BOOTSTRAP_HR_*` to |
 
 The demo-employee email domain and password are hardcoded the same way in
 both Docker and local dev (only the bootstrap HR admin's credentials
