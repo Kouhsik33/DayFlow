@@ -97,7 +97,7 @@ export function LeaveCalendar({
 
   return (
     <div className="grid gap-4 lg:grid-cols-[1fr_260px]">
-      <div className="rounded-lg border border-[var(--line)] bg-white p-4">
+      <div className="rounded-lg border border-[var(--line)] bg-[var(--surface)] p-4">
         <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center gap-1">
             <button
@@ -170,9 +170,9 @@ export function LeaveCalendar({
                   isSelected
                     ? 'bg-[var(--accent)] text-white'
                     : isToday
-                      ? 'border border-[var(--accent)] font-semibold text-[var(--accent)]'
+                      ? 'border border-[var(--accent)] font-semibold text-[var(--accent-text)]'
                       : holiday
-                        ? 'font-semibold text-[var(--accent)] hover:bg-[var(--accent-soft)]'
+                        ? 'font-semibold text-[var(--accent-text)] hover:bg-[var(--accent-soft)]'
                         : 'text-[var(--ink)] hover:bg-[var(--bg)]'
                 }`}
               >
@@ -180,7 +180,7 @@ export function LeaveCalendar({
                 {dayRequests.length > 0 && (
                   <span
                     className={`absolute bottom-1 h-1 w-1 rounded-full ${
-                      isSelected ? 'bg-white' : STATUS_COLORS[dayRequests[0].status] || 'bg-[var(--line)]'
+                      isSelected ? 'bg-[var(--surface)]' : STATUS_COLORS[dayRequests[0].status] || 'bg-[var(--line)]'
                     }`}
                   />
                 )}
@@ -191,7 +191,7 @@ export function LeaveCalendar({
       </div>
 
       <aside className="space-y-4">
-        <div className="rounded-lg border border-[var(--line)] bg-white p-4">
+        <div className="rounded-lg border border-[var(--line)] bg-[var(--surface)] p-4">
           <p className="mb-2 text-sm font-semibold text-[var(--ink)]">
             {selected
               ? new Date(`${selected}T00:00:00`).toLocaleDateString(undefined, {
@@ -207,7 +207,7 @@ export function LeaveCalendar({
             </p>
           )}
           {selected && selectedHoliday && (
-            <p className="mb-2 text-sm text-[var(--accent)]">🎉 {selectedHoliday.name}</p>
+            <p className="mb-2 text-sm text-[var(--accent-text)]">🎉 {selectedHoliday.name}</p>
           )}
           {selected && selectedRequests.length > 0 && (
             <ul className="space-y-2">

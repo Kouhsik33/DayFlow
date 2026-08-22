@@ -51,7 +51,7 @@ function WorkflowTrail({ request }: { request: LeaveRequest }) {
             className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 ${
               step.done
                 ? 'border-[var(--accent)] bg-[var(--accent)]'
-                : 'border-[var(--border-control)] bg-white'
+                : 'border-[var(--border-control)] bg-[var(--surface)]'
             }`}
           >
             {step.done && (
@@ -202,7 +202,7 @@ export function LeaveReviewDrawer({
                 href={request.attachmentUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-md border border-[var(--border-control)] px-2.5 py-1.5 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+                className="inline-flex items-center gap-1.5 rounded-md border border-[var(--border-control)] px-2.5 py-1.5 text-sm font-medium text-[var(--accent-text)] hover:bg-[var(--accent-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
               >
                 <PaperclipIcon size={16} />
                 View attachment

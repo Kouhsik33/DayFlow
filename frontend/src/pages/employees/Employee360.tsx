@@ -70,7 +70,7 @@ export function Employee360Page() {
         actions={
           <Link
             to={`/employees/${id}`}
-            className="rounded text-sm font-medium text-[var(--accent)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+            className="rounded text-sm font-medium text-[var(--accent-text)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
           >
             Open profile →
           </Link>
@@ -90,7 +90,7 @@ export function Employee360Page() {
       />
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <section className="rounded-lg border border-[var(--line)] bg-white p-4 shadow-[var(--shadow)]">
+        <section className="rounded-lg border border-[var(--line)] bg-[var(--surface)] p-4 shadow-[var(--shadow)]">
           <h2 className="mb-3 font-semibold text-[var(--ink)]">Profile</h2>
           <dl className="grid grid-cols-2 gap-3 text-sm">
             <div>
@@ -108,7 +108,7 @@ export function Employee360Page() {
           </dl>
         </section>
 
-        <section className="rounded-lg border border-[var(--line)] bg-white p-4 shadow-[var(--shadow)]">
+        <section className="rounded-lg border border-[var(--line)] bg-[var(--surface)] p-4 shadow-[var(--shadow)]">
           <h2 className="mb-3 font-semibold text-[var(--ink)]">Leave balances</h2>
           {d.leaveSnapshot.balances.length === 0 ? (
             <p className="text-sm text-[var(--muted)]">No leave types configured.</p>
@@ -124,7 +124,7 @@ export function Employee360Page() {
           )}
         </section>
 
-        <section className="rounded-lg border border-[var(--line)] bg-white p-4 shadow-[var(--shadow)]">
+        <section className="rounded-lg border border-[var(--line)] bg-[var(--surface)] p-4 shadow-[var(--shadow)]">
           <h2 className="mb-3 font-semibold text-[var(--ink)]">Recent leave</h2>
           {d.leaveSnapshot.recentRequests.length === 0 ? (
             <EmptyState title="No requests yet" icon={<InboxIcon size={18} />} />
@@ -142,7 +142,7 @@ export function Employee360Page() {
           )}
         </section>
 
-        <section className="rounded-lg border border-[var(--line)] bg-white p-4 shadow-[var(--shadow)]">
+        <section className="rounded-lg border border-[var(--line)] bg-[var(--surface)] p-4 shadow-[var(--shadow)]">
           <h2 className="mb-3 font-semibold text-[var(--ink)]">Recent activity</h2>
           {d.recentActivity.length === 0 ? (
             <EmptyState title="No recorded activity" icon={<InboxIcon size={18} />} />

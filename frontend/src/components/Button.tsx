@@ -2,8 +2,11 @@ import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
 
 const variants = {
   primary: 'bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] border-transparent',
-  secondary: 'bg-white text-[var(--ink)] border-[var(--line)] hover:bg-[var(--bg)]',
-  danger: 'bg-[var(--danger)] text-white hover:opacity-90 border-transparent',
+  secondary: 'bg-[var(--surface)] text-[var(--ink)] border-[var(--line)] hover:bg-[var(--bg)]',
+  // DESIGN_SYSTEM §1.4 — no red simultaneously passes "white text on it" and "it as text
+  // on --bg" at 4.5:1 (see index.css), so --danger is tuned for its ~50 plain-text call
+  // sites and this one solid-fill button uses dark text instead of white (6.8:1).
+  danger: 'bg-[var(--danger)] text-[#1a1a1a] hover:opacity-90 border-transparent',
   ghost: 'bg-transparent text-[var(--muted)] border-transparent hover:bg-[var(--bg)]',
 };
 

@@ -2,43 +2,54 @@
 @import 'tailwindcss';
 
 :root {
-  /* DESIGN_SYSTEM §1.3 — unified with the landing page's brand palette (Night Bordeaux /
-     Powder Blue / Alabaster). Values below are tuned, not copied 1:1 from landing.css:
-     several of landing's own semantic colors (muted text, success, warning) sit just under
-     4.5:1 on our backgrounds, so they're darkened here to clear AA — every pair below is
-     re-verified, ratios noted per line. */
-  --bg: #f4f7fa;
-  --surface: #ffffff;
-  --ink: #1e293b;
-  --muted: #5a6675;
-  --line: #cbd5e1;
-  --accent: #5e191a;
-  --accent-hover: #7e2224;
-  --accent-soft: #efe8e8;
-  /* Secondary brand color (Powder Blue). Non-text use only — white-on-secondary is 1.94:1
-     and fails AA, so it's for icons/borders/soft fills, never a solid button with text. */
-  --secondary: #6c9bbb;
-  --secondary-soft: #e7eff4;
-  --danger: #b91c1c;
-  --danger-soft: #f7e4e4;
-  --warning: #9a5b0a;
-  --warning-soft: #f3ebe2;
-  --success: #0f7a3d;
-  --success-soft: #e2efe8;
+  /* DESIGN_SYSTEM §1.4 — dark theme: charcoal / violet / lime, per explicit request to
+     replace the previous bordeaux/powder-blue palette. Every pair here is re-verified for
+     this specific dark background, not assumed from the light-theme version:
+     - --accent (#8c3dff) is for FILLS/BORDERS/FOCUS RINGS only (white-on-it = 4.97:1;
+       as a border/ring against --bg = 3.24:1, clears the 3:1 UI-component threshold) —
+       it is NOT accessible as small text on this background (3.24:1 fails 4.5:1).
+     - --accent-text is a lighter tint of the same violet for anywhere it appears AS TEXT
+       (links, active-tab labels, badge text) — 5.92:1 on --bg. Two tokens for one brand
+       hue is the standard dark-mode pattern (e.g. Tailwind's 400 vs 600 shades) — there is
+       no single violet that reads as both legible text on charcoal AND passes white-text
+       button-fill contrast at once.
+     - --danger similarly had to move off a pure saturated red: no red simultaneously
+       clears "white text on it" and "it as text on charcoal" at 4.5:1, so it's tuned for
+       its dominant use (~50 call sites render it as plain error text) and the one solid-fill
+       button (Button.tsx danger variant) uses dark text on it instead of white. */
+  --bg: #212121;
+  --surface: #2c2c2c;
+  --surface-hover: #363636;
+  --ink: #f8fafc;
+  --muted: #94a3b8;
+  --line: #334155;
+  --accent: #8c3dff;
+  --accent-hover: #a259ff;
+  --accent-text: #a78bfa;
+  --accent-soft: #392e4a;
+  /* Secondary brand color (lime/radium). Bright enough to work as text on --bg (13.2:1)
+     and, with dark text on top, as a solid fill too — no split token needed here. */
+  --secondary: #b0ff3d;
+  --secondary-soft: #3e4a2e;
+  --danger: #ff6b6b;
+  --danger-soft: #3d3131;
+  --warning: #f59e0b;
+  --warning-soft: #483c27;
+  --success: #10b981;
+  --success-soft: #293d36;
   /* DESIGN_SYSTEM §1.2 — separates "on leave" from --accent so links/primary actions
-     stay the only thing that reads as interactive. Verified 5.17:1 / 4.65:1 on soft. */
-  --info: #2563eb;
-  --info-soft: #eef3fd;
-  --nav: #3a0c0d;
-  --nav-text: #f3e8e8;
-  --nav-muted: #d9b8b9;
-  --shadow: 0 1px 2px rgba(94, 25, 26, 0.06);
-  --shadow-md: 0 8px 16px rgba(94, 25, 26, 0.1), 0 2px 4px rgba(94, 25, 26, 0.06);
-  --shadow-lg: 0 20px 32px rgba(94, 25, 26, 0.16), 0 4px 8px rgba(94, 25, 26, 0.08);
-  /* DESIGN_SYSTEM §1.2 — control boundaries need 3:1 contrast; --line (1.48:1) is for
-     decorative dividers only. Verified 3.48:1 on white, 3.19:1 on canvas — unchanged, this
-     neutral doesn't need to carry the brand hue. */
-  --border-control: #7d8b9a;
+     stay the only thing that reads as interactive. */
+  --info: #38bdf8;
+  --info-soft: #2e4049;
+  --nav: #1a1a1a;
+  --nav-text: #f8fafc;
+  --nav-muted: #94a3b8;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 20px 32px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+  /* DESIGN_SYSTEM §1.2 — control boundaries need 3:1 contrast; --line (1.56:1 on --bg) is
+     for decorative dividers only. Verified 4.03:1 on --bg, 3.50:1 on --surface. */
+  --border-control: #71809a;
   font-family: 'IBM Plex Sans', system-ui, sans-serif;
   color: var(--ink);
   background: var(--bg);
@@ -72,8 +83,8 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(ellipse 80% 50% at 0% 0%, rgba(94, 25, 26, 0.05), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(108, 155, 187, 0.08), transparent 50%),
+    radial-gradient(ellipse 80% 50% at 0% 0%, rgba(140, 61, 255, 0.07), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(176, 255, 61, 0.05), transparent 50%),
     var(--bg);
 }
 

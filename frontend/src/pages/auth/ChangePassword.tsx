@@ -34,7 +34,7 @@ export function ChangePasswordPage() {
   }
 
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-white p-8 shadow-[var(--shadow)]">
+    <div className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-8 shadow-[var(--shadow)]">
       <h1 className="text-xl font-semibold">Change password</h1>
       <p className="mt-1 text-sm text-[var(--muted)]">
         You must set a new password before continuing.

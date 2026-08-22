@@ -66,14 +66,14 @@ export function NotificationBell() {
         <div
           role="menu"
           aria-label="Notifications"
-          className="absolute right-0 z-40 mt-2 w-80 max-w-[calc(100vw-1.5rem)] overflow-hidden rounded-lg border border-[var(--line)] bg-white shadow-xl"
+          className="absolute right-0 z-40 mt-2 w-80 max-w-[calc(100vw-1.5rem)] overflow-hidden rounded-lg border border-[var(--line)] bg-[var(--surface)] shadow-xl"
         >
           <div className="flex items-center justify-between border-b border-[var(--line)] px-3 py-2.5">
             <span className="text-sm font-semibold text-[var(--ink)]">Notifications</span>
             {data.length > 0 && (
               <button
                 type="button"
-                className="rounded px-1.5 py-0.5 text-xs font-medium text-[var(--accent)] hover:bg-[var(--accent-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+                className="rounded px-1.5 py-0.5 text-xs font-medium text-[var(--accent-text)] hover:bg-[var(--accent-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
                 onClick={() => markAll.mutate()}
                 disabled={markAll.isPending || unread === 0}
               >
@@ -96,7 +96,7 @@ export function NotificationBell() {
               <button
                 type="button"
                 onClick={() => refetch()}
-                className="mt-2 text-sm font-medium text-[var(--accent)] underline underline-offset-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+                className="mt-2 text-sm font-medium text-[var(--accent-text)] underline underline-offset-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
               >
                 Retry
               </button>

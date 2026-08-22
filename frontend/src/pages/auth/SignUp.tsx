@@ -145,7 +145,7 @@ export function SignUpPage() {
 
   if (status.isLoading) {
     return (
-      <div className="rounded-xl border border-[var(--line)] bg-white p-8 shadow-[var(--shadow)]">
+      <div className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-8 shadow-[var(--shadow)]">
         <div className="mx-auto h-10 w-10 animate-pulse rounded-lg bg-[var(--line)]/60" />
         <div className="mx-auto mt-4 h-4 w-40 animate-pulse rounded bg-[var(--line)]/60" />
       </div>
@@ -155,7 +155,7 @@ export function SignUpPage() {
   // Employees can never self-register: once an organisation exists this screen closes.
   if (status.data && !status.data.open) {
     return (
-      <div className="rounded-xl border border-[var(--line)] bg-white p-8 text-center shadow-[var(--shadow)]">
+      <div className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-8 text-center shadow-[var(--shadow)]">
         <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--info-soft)] text-[var(--info)]">
           <UserPlusIcon size={20} />
         </div>
@@ -175,7 +175,7 @@ export function SignUpPage() {
   }
 
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-white p-6 shadow-[var(--shadow)] sm:p-8">
+    <div className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-6 shadow-[var(--shadow)] sm:p-8">
       <div className="mb-6 text-center">
         <h1 className="text-2xl font-semibold tracking-tight text-[var(--ink)]">
           Create your organisation
@@ -348,7 +348,7 @@ export function SignUpPage() {
         Already have an account?{' '}
         <Link
           to="/login"
-          className="rounded font-medium text-[var(--accent)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+          className="rounded font-medium text-[var(--accent-text)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
         >
           Sign in
         </Link>

@@ -89,7 +89,7 @@ function MyAttendance() {
               type="button"
               aria-label="Previous month"
               onClick={() => shift(-1)}
-              className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border border-[var(--border-control)] bg-white text-[var(--muted)] hover:bg-[var(--bg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+              className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border border-[var(--border-control)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--bg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
             >
               <ArrowLeftIcon size={16} />
             </button>
@@ -100,7 +100,7 @@ function MyAttendance() {
               type="button"
               aria-label="Next month"
               onClick={() => shift(1)}
-              className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border border-[var(--border-control)] bg-white text-[var(--muted)] hover:bg-[var(--bg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+              className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md border border-[var(--border-control)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--bg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
             >
               <ArrowRightIcon size={16} />
             </button>
@@ -130,7 +130,7 @@ function MyAttendance() {
             />
           ) : (
             <>
-              <div className="hidden overflow-x-auto rounded-lg border border-[var(--line)] bg-white shadow-[var(--shadow)] md:block">
+              <div className="hidden overflow-x-auto rounded-lg border border-[var(--line)] bg-[var(--surface)] shadow-[var(--shadow)] md:block">
                 <table className="w-full text-left text-sm">
                   <caption className="sr-only">Daily attendance for the selected month</caption>
                   <thead className="border-b border-[var(--line)] bg-[var(--bg)] text-[var(--muted)]">
@@ -180,7 +180,7 @@ function MyAttendance() {
                     workHours: number | null;
                     status: string;
                   }) => (
-                    <div key={d.id} className="rounded-lg border border-[var(--line)] bg-white p-3">
+                    <div key={d.id} className="rounded-lg border border-[var(--line)] bg-[var(--surface)] p-3">
                       <div className="flex items-center justify-between">
                         <p className="text-sm font-medium text-[var(--ink)]">{formatDate(d.date)}</p>
                         <StatusBadge status={d.status} />
@@ -256,7 +256,7 @@ function AdminAttendance() {
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="rounded-md border border-[var(--border-control)] bg-white px-3 py-2 text-base outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+            className="rounded-md border border-[var(--border-control)] bg-[var(--surface)] px-3 py-2 text-base outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
           />
         </label>
         <label className="block text-sm">
@@ -270,7 +270,7 @@ function AdminAttendance() {
               placeholder="Search employee…"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              className="rounded-md border border-[var(--border-control)] bg-white py-2 pl-9 pr-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+              className="rounded-md border border-[var(--border-control)] bg-[var(--surface)] py-2 pl-9 pr-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
             />
           </div>
         </label>
@@ -288,7 +288,7 @@ function AdminAttendance() {
 
       {data && data.items.length > 0 && (
         <>
-          <div className="hidden overflow-x-auto rounded-lg border border-[var(--line)] bg-white md:block">
+          <div className="hidden overflow-x-auto rounded-lg border border-[var(--line)] bg-[var(--surface)] md:block">
             <table className="w-full text-left text-sm">
               <caption className="sr-only">Attendance for {formatDate(date)}</caption>
               <thead className="border-b border-[var(--line)] bg-[var(--bg)] text-[var(--muted)]">
@@ -312,7 +312,7 @@ function AdminAttendance() {
                     <tr key={row.employee.id} className="border-b border-[var(--line)] last:border-0">
                       <td className="px-3 py-2.5">
                         <Link
-                          className="rounded font-medium text-[var(--accent)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+                          className="rounded font-medium text-[var(--accent-text)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
                           to={`/employees/${row.employee.id}`}
                         >
                           {row.employee.firstName} {row.employee.lastName}
@@ -343,7 +343,7 @@ function AdminAttendance() {
                 <Link
                   key={row.employee.id}
                   to={`/employees/${row.employee.id}`}
-                  className="block rounded-lg border border-[var(--line)] bg-white p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
+                  className="block rounded-lg border border-[var(--line)] bg-[var(--surface)] p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
                 >
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-medium text-[var(--ink)]">
@@ -366,7 +366,7 @@ function AdminAttendance() {
 
 function TableSkeleton({ columns, rows = 5 }: { columns: number; rows?: number }) {
   return (
-    <div aria-busy="true" aria-label="Loading" className="overflow-hidden rounded-lg border border-[var(--line)] bg-white">
+    <div aria-busy="true" aria-label="Loading" className="overflow-hidden rounded-lg border border-[var(--line)] bg-[var(--surface)]">
       {Array.from({ length: rows }).map((_, i) => (
         <div key={i} className="flex items-center gap-6 border-b border-[var(--line)] px-3 py-3.5 last:border-0">
           {Array.from({ length: columns }).map((_, j) => (

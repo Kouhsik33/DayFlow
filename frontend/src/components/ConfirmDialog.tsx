@@ -48,14 +48,14 @@ export function ConfirmDialog({
         aria-modal="true"
         aria-labelledby="confirm-title"
         aria-describedby="confirm-desc"
-        className="relative w-full max-w-sm rounded-xl border border-[var(--line)] bg-white p-5 shadow-2xl outline-none"
+        className="relative w-full max-w-sm rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5 shadow-2xl outline-none"
       >
         <div className="flex items-start gap-3">
           <span
             className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
               variant === 'danger'
                 ? 'bg-[var(--danger-soft)] text-[var(--danger)]'
-                : 'bg-[var(--accent-soft)] text-[var(--accent)]'
+                : 'bg-[var(--accent-soft)] text-[var(--accent-text)]'
             }`}
           >
             <WarningIcon size={18} />
