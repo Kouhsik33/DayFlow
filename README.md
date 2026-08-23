@@ -7,6 +7,37 @@ HR admin console — plus a public marketing/landing page.
 - **Frontend:** React 19 + TypeScript + Vite + Tailwind CSS v4 (`frontend/`)
 - **Backend:** Node + Express + Prisma + PostgreSQL (`backend/`)
 
+## Live deployment
+
+Open the deployed application here: [https://day-flow-six.vercel.app/](https://day-flow-six.vercel.app/)
+
+### HR login credentials
+
+Use the following HR email:
+
+```text
+hr.admin@dayflow-demo.local
+```
+
+Try the passwords in this order:
+
+1. `Admin@123456` — on the first login, the application asks you to change the password.
+2. `Hr@123456789` — use this if the first password no longer works because the password was already changed.
+
+### Employee fallback login
+
+If the HR login does not work, use this seeded employee account. Because Anjali
+Patel belongs to Human Resources, this account also shows the HR dashboard:
+
+```text
+Email:    anjali.patel@dayflow-demo.local
+Password: Password@123
+```
+
+The application data is hosted on Neon PostgreSQL's free tier. The database may take
+some time to wake up, so the application can have higher latency. Occasionally, a
+request may also show a temporary `404`; wait briefly and try again.
+
 ## Quick start — Docker (recommended, no setup)
 
 ```bash
